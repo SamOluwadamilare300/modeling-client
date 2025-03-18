@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap');
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arapey';
+}
+
+.container {
+    width: 350px;
+  
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Arapey';
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Arapey';
+}
+
+button {
+    background: #f5f5f5;
+    color: black;
+    cursor: pointer;
+    font-family: 'Arapey';
+}
+
+button:hover {
+    background-color: black;
+    color: #f5f5f5;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Arapey';
+}
