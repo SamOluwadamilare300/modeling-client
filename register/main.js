@@ -1,3 +1,4 @@
+// Toastr configuration
 toastr.options = {
     "closeButton": true,
     "debug": false,
@@ -16,11 +17,13 @@ toastr.options = {
     "hideMethod": "fadeOut"
 };
 
-document.getElementById("testButton").addEventListener("click", function() {
+// Test button for Toastr
+document.getElementById("testButton").addEventListener("click", function () {
     toastr.success("This is a test message!");
 });
 
-document.getElementById("registrationForm").addEventListener("submit", async function(event) {
+// Form submission handler
+document.getElementById("registrationForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form from reloading the page
 
     const userData = {
@@ -34,8 +37,14 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
         password: document.getElementById("password").value
     };
 
+    // Determine the API URL based on the environment
+    const isDevelopment = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    const API_URL = isDevelopment
+        ? "http://localhost:3000/register" // Development URL
+        : "https://modeling-backend.onrender.com/register"; // Production URL
+
     try {
-        const response = await fetch("http://localhost:3000/register", {
+        const response = await fetch(API_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
